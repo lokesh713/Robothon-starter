@@ -169,10 +169,10 @@ def run_demo(
 
     final_pos = body_position(model, data, "pelvis")
     summary = {
-        "project": "Agibot X2 MuJoCo Test Demo",
-        "task": "The X2 humanoid model loads with its mesh assets and performs a deterministic showcase pose animation.",
+        "project": "FF Master MuJoCo Test Demo",
+        "task": "The FF Master humanoid model loads with its mesh assets and performs a deterministic showcase pose animation.",
         "model": str(model_path),
-        "source": "Agibot X2_URDF-v1.3.0 package",
+        "source": "FF Master model package (assets/x2)",
         "video": str(video_path),
         "trajectory": str(trajectory_path),
         "duration_s": duration_s,
@@ -196,7 +196,7 @@ def run_demo(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate a MuJoCo test video using the Agibot X2 humanoid model."
+        description="Generate a MuJoCo test video using the FF Master humanoid model."
     )
     parser.add_argument("--model", type=Path, default=DEFAULT_MODEL)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)

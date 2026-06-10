@@ -1,38 +1,81 @@
 # MuJoCo Robotics Simulation Hackathon
 
-本次 Hackathon 要求参赛者基于 [Google DeepMind MuJoCo](https://github.com/google-deepmind/mujoco) 构建机器人仿真模拟器、任务场景或数据采集系统。
+Build a robot simulation task, interactive system, or data-collection environment with [Google DeepMind MuJoCo](https://github.com/google-deepmind/mujoco).
 
-我们会提供一个官方 GitHub Repo，参赛者需要通过提交 **Pull Request** 的方式提交作品。最终评审将基于 PR 中的代码、模型、运行说明和 demo 视频进行。
+This repository is the official Hackathon starter repo. Submit your work by opening a **Pull Request**. Submissions are reviewed based on the PR code, models, run instructions, demo video, and registration UUID.
 
-## 参与方式
+## How to Participate
 
-1. Fork 官方 Hackathon Repo
-2. 在自己的分支中完成项目开发
-3. 提交可运行代码、模型文件、运行说明和 demo 视频
-4. 向官方 Repo 发起 Pull Request
-5. 在 PR 描述中说明项目目标、技术方案、运行方式和最终效果
+1. Register on the official Hackathon platform and obtain your **registration UUID** (token).
+2. Fork this repository.
+3. Build your project on a feature branch.
+4. Add your submission under `submissions/<your-project-name>/`.
+5. Open a Pull Request to this repository.
+6. Fill in your registration UUID in the required locations (see below).
 
-## 核心要求
+## Registration UUID (Required)
 
-- 使用 MuJoCo 作为主要物理仿真引擎
-- 可以使用任意机器人本体，包括机械臂、移动机器人、四足机器人、人形机器人、夹爪、无人车、灵巧手 / 多指机械手等
-- 可以使用开源机器人模型，也可以自定义 MJCF 模型
-- 需要构建一个可运行的模拟任务、交互系统或数据采集环境
-- 最终必须通过 Pull Request 提交
-- PR 中需要包含 demo 视频或视频链接
+Participants must obtain a **registration UUID** from the official Hackathon platform before submitting. This UUID proves that you registered for the event.
 
-## 推荐方向
+### Where to put your UUID
 
-- **复杂遥操**：键盘、手柄、VR、Web UI、动作捕捉等输入方式
-- **长程任务**：导航、抓取、搬运、装配、开门、整理、清理等多阶段任务
-- **数据采集**：自动生成轨迹、状态、动作、图像、深度、传感器或任务标签数据
-- **灵巧手操作**：多指抓取、手内旋转、工具使用、按钮操作、拧瓶盖、拼插等
-- **实际场景**：K12 教育、校园安防、家庭服务、仓储物流、工业巡检等
-- **自由探索**：任何有创意的 MuJoCo 机器人仿真项目
+You must include the same UUID in **both** places below:
 
-## 特别鼓励
+#### 1. Submission folder — `registration.json`
 
-欢迎使用真实开源机器人本体，例如：
+Create this file inside your submission directory:
+
+```
+submissions/<your-project-name>/registration.json
+```
+
+Example:
+
+```json
+{
+  "uuid": "00000000-0000-0000-0000-000000000000",
+  "participant_name": "Your Name or Team Name",
+  "project_name": "Your Project Name"
+}
+```
+
+Replace the example UUID with the one issued by the Hackathon platform. Do not share or reuse another participant's UUID.
+
+#### 2. Pull Request description
+
+When you open your PR, the PR template will ask for your registration UUID. Paste the same UUID there.
+
+If the template is not shown automatically, add this line at the top of your PR description:
+
+```markdown
+Registration UUID: 00000000-0000-0000-0000-000000000000
+```
+
+Submissions without a valid UUID in both places may be rejected during review.
+
+Use `submissions/SUBMISSION_TEMPLATE/` as a starting point for your folder structure.
+
+## Core Requirements
+
+- Use MuJoCo as the primary physics simulation engine
+- You may use any robot platform: arms, mobile robots, quadrupeds, humanoids, grippers, UGVs, dexterous hands, etc.
+- You may use open-source robot models or custom MJCF models
+- Build a runnable simulation task, interactive system, or data-collection environment
+- Submit via Pull Request
+- Include a demo video or video link in the PR
+
+## Recommended Directions
+
+- **Advanced teleoperation**: keyboard, gamepad, VR, Web UI, motion capture
+- **Long-horizon tasks**: navigation, grasping, carrying, assembly, door opening, tidying, cleaning
+- **Data collection**: auto-generated trajectories, states, actions, images, depth, sensor streams, labels
+- **Dexterous manipulation**: multi-finger grasping, in-hand rotation, tool use, button presses, bottle opening
+- **Real-world scenarios**: K12 education, campus security, home service, warehouse logistics, industrial inspection
+- **Open exploration**: any creative MuJoCo robotics simulation project
+
+## Encouraged Robot Platforms
+
+Open-source robot models are welcome, for example:
 
 - Unitree Go1 / Go2 / G1
 - Boston Dynamics Spot
@@ -40,98 +83,100 @@
 - Shadow Hand
 - LEAP Hand
 - Robotiq Gripper
-- 其他 MuJoCo / MJCF 开源模型
+- Other MuJoCo / MJCF open models
 
-可参考模型库：
+Reference libraries:
 
 - [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie)
 - [MuJoCo Model Gallery](https://mujoco.readthedocs.io/en/latest/models.html)
 
-## PR 提交内容
+## PR Submission Checklist
 
-每个 PR 需要包含：
+Each PR should include:
 
-- 项目代码
-- MuJoCo 场景文件 / 机器人模型 / 相关资源
-- 运行说明，包括依赖、安装方式、启动命令、操作方式
-- Demo 视频或视频链接
-- 简短项目说明，包括：
-  - 项目名称
-  - 使用的机器人本体
-  - 任务目标
-  - 技术方案
-  - 核心功能
-  - 项目亮点
-  - 当前限制
-  - 未来改进方向
+- Project source code
+- MuJoCo scene files / robot models / related assets
+- Run instructions: dependencies, install steps, launch commands, controls
+- Demo video or video link
+- `registration.json` with your platform-issued UUID
+- A short project summary covering:
+  - Project name
+  - Robot platform used
+  - Task goal
+  - Technical approach
+  - Core features
+  - Highlights
+  - Current limitations
+  - Future improvements
 
-## Demo 视频要求
+## Demo Video Requirements
 
-视频需要由提交的代码运行产生，并展示：
+The video must be produced by running your submitted code and should show:
 
-- 模拟环境启动
-- 机器人本体和任务场景
-- 任务执行过程
-- 遥操、自动控制或数据采集逻辑
-- 最终结果或任务状态
+- Simulation startup
+- Robot platform and task scene
+- Task execution
+- Teleoperation, autonomous control, or data-collection logic
+- Final result or task state
 
-建议视频长度：1 到 3 分钟。
+Recommended length: 1–3 minutes.
 
-## 评审标准
+## Judging Criteria
 
-- **可运行性**：代码是否能顺利运行，是否容易复现
-- **MuJoCo 使用深度**：是否充分利用 MJCF、物理仿真、碰撞、关节、传感器、执行器等能力
-- **任务设计**：任务是否清晰、有挑战性、有现实意义
-- **控制能力**：是否体现遥操、自动控制、策略控制、任务规划或数据采集能力
-- **灵巧操作能力**：如果使用灵巧手，是否体现多指协调、精细操作或高自由度控制
-- **工程质量**：代码结构、文档、配置和资源管理是否清晰
-- **展示效果**：demo 视频是否直观、有说服力
-- **创新性**：场景、本体、任务或应用方向是否有新意
+- **Reproducibility**: does the code run cleanly and is it easy to reproduce?
+- **MuJoCo depth**: MJCF, physics, collision, joints, sensors, actuators
+- **Task design**: clarity, challenge, real-world relevance
+- **Control capability**: teleop, autonomy, policy control, planning, or data collection
+- **Dexterity**: multi-finger coordination and fine manipulation (if applicable)
+- **Engineering quality**: code structure, docs, configuration, asset management
+- **Presentation**: demo video clarity and persuasiveness
+- **Innovation**: novelty in scene, robot, task, or application
 
-## 示例题目
+## Example Topics
 
-- 用 Boston Dynamics Spot 完成校园安防巡逻模拟
-- 用 Unitree Go1 / Go2 完成复杂地形巡检任务
-- 用 Franka Panda 完成 K12 实验器材整理任务
-- 用 Shadow Hand / LEAP Hand 完成精细抓取和手内旋转任务
-- 构建一个 Web / 手柄 / VR 遥操机器人系统
-- 自动生成机器人抓取轨迹数据集
-- 模拟家庭服务机器人完成开门、拾取、放置、清理桌面等长程任务
+- Campus security patrol with Boston Dynamics Spot
+- Rough-terrain inspection with Unitree Go1 / Go2
+- K12 lab organization with Franka Panda
+- Fine grasping and in-hand rotation with Shadow Hand / LEAP Hand
+- Web / gamepad / VR teleoperation stack
+- Auto-generated grasp trajectory dataset
+- Home-service long-horizon tasks: open door, pick, place, clean desktop
 
-## 最终目标
+## Goal
 
-提交一个可以运行、可以展示、可以复现的 MuJoCo 机器人仿真项目。参赛者通过 Pull Request 提交作品，评审会根据 PR 内容和 demo 视频进行评估。
+Deliver a runnable, demonstrable, reproducible MuJoCo robotics simulation project via Pull Request.
 
 ---
 
-## 本仓库说明
+## About This Repository
 
-本 Repo 为 Hackathon 官方起始仓库，已包含部分机器人模型与示例脚本，供参赛者 Fork 后在此基础上开发。
+This is the official Hackathon starter repository. It includes bundled robot assets and example scripts you can fork and extend.
 
-### 快速开始
+### Quick Start
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-运行示例：
+Run examples:
 
 ```bash
 python examples/run_x2_demo.py
 python examples/run_zsl1_demo.py
 ```
 
-使用 MuJoCo Viewer 查看模型：
+Open MuJoCo Viewer:
 
 ```bash
 python -m mujoco.viewer
 ```
 
-### 已包含资源
+### Bundled Assets
 
-| 路径 | 说明 |
-|------|------|
-| `assets/x2/` | X2 人形机器人（ultra / hand / fist 等变体） |
-| `assets/zsl-1/` | ZSL-1 机器人 URDF / MuJoCo 模型 |
-| `examples/` | 示例运行脚本 |
-| `model_catalog.json` | 推荐开源机器人模型参考列表 |
+| Path | Description |
+|------|-------------|
+| `assets/x2/` | FF Master humanoid (ultra / hand / fist variants) |
+| `assets/zsl-1/` | ZSL-1 robot URDF / MuJoCo model |
+| `examples/` | Example run scripts |
+| `model_catalog.json` | Reference list of recommended open-source robot models |
+| `submissions/SUBMISSION_TEMPLATE/` | Submission folder template with UUID placeholder |
