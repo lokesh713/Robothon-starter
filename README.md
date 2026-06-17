@@ -1,3 +1,25 @@
+# Adaptive Terrain Explorer Biped - My Robothon 2026 Submission
+
+## Project Idea
+Maine ek strong bipedal robot design kiya hai jo rough terrain (steps aur hills) pe chal sake. Isme adaptive gait use kiya gaya hai taaki robot balance maintain kare aur dynamically adjust ho jaaye.
+
+### Why this is good for top ranking:
+- Realistic physics-based leg movement
+- Challenging terrain with obstacles
+- Phase-based smart controller
+- Clear Embodied AI demonstration (motion + environment interaction)
+
+## Files in this submission
+- `adaptive_explorer.xml` → Robot model + terrain
+- `simulate_explorer.py` → Walking controller
+- `README.md` (ye file)
+- `registration.json` (with my UUID)
+- Demo video (to be added)
+
+## How to run
+```bash
+pip install mujoco numpy
+python simulate_explorer.py
 <div align="center">
 
 # 🤖 Robothon 2026
